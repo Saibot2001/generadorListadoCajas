@@ -35,7 +35,8 @@
           <h2>Subir plantilla completada</h2>
         </div>
         <p>Selecciona y sube la plantilla XLSX completada. El procesamiento se hará automáticamente.</p>
-        <input id="fileInput" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+        <label for="fileInput" class="file-button">Seleccionar archivo</label>
+        <input id="fileInput" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" style="display:none;" />
         <p id="processMsg" style="color:var(--muted);margin-top:8px">Sin archivo cargado.</p>
       </section>
 

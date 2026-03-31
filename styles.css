@@ -12,17 +12,19 @@ body{font-family:Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;backgroun
 h1{margin:0 0 16px;font-size:1.6rem;color:#111}
 p{color:var(--muted);margin:0 0 16px}
 .controls{margin:24px 0;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-.controls label{font-weight:600;color:#111;margin-right:8px}
-.controls input{border:1px solid var(--border);padding:10px 12px;border-radius:8px;font-size:1rem;width:200px}
-.controls input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
+.controls label{font-weight:700;color:#111;margin-right:12px;font-size:1.1rem}
+.controls input{border:2px solid var(--border);padding:12px 14px;border-radius:8px;font-size:1.1rem;width:220px;font-weight:500}
+.controls input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(249,115,22,0.2)}
 button{background:var(--accent);color:#fff;border:0;padding:12px 20px;border-radius:8px;font-weight:600;cursor:pointer;transition:background 0.2s}
 button:hover{background:var(--hover)}
 button:disabled{background:#d1d5db;color:#9ca3af;cursor:not-allowed}
+.file-button{display:inline-block;background:#e6eefc;color:var(--accent);border:1px solid var(--accent);padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer;transition:background 0.2s}
+.file-button:hover{background:var(--accent);color:#fff}
 .link-button{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:8px;font-weight:600;text-align:center;transition:background 0.2s}
 .link-button:hover{background:var(--hover);text-decoration:none;color:#fff}
 .step{margin-bottom:32px;padding:20px;border:1px solid var(--border);border-radius:8px;background:#fafbfc}
 .step-header{display:flex;align-items:center;margin-bottom:8px}
-.step-number{display:flex;justify-content:center;align-items:center;width:32px;height:32px;background:var(--accent);color:#fff;border-radius:50%;font-weight:bold;margin-right:12px;font-size:1.1rem}
+.step-number{display:flex;justify-content:center;align-items:center;width:32px;height:32px;background:var(--accent);color:#fff;border-radius:50%;font-weight:bold;margin-right:12px;font-size:1rem}
 .step h2{margin:0;font-size:1.2rem;color:#111}
 .step p{margin:0 0 16px;color:var(--muted)}
 .uploader input[type="file"]{margin-bottom:16px}
