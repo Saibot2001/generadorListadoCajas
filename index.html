@@ -11,33 +11,48 @@
       <h1>Generador de Listado de Cajas</h1>
       
       <section class="step">
-        <h2>Paso 1: Descargar plantilla</h2>
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2>Descargar plantilla</h2>
+        </div>
         <p>Descarga la plantilla XLSX para completar con los datos de las cajas.</p>
         <button id="downloadXlsx">Descargar plantilla (XLSX)</button>
       </section>
 
       <section class="step">
-        <h2>Paso 2: Cargar número de PL</h2>
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2>Cargar número de PL</h2>
+        </div>
         <p>Ingresa el número de Packing List (PL) que se usará para generar los códigos de barras.</p>
         <label for="numeroPL">Número de PL:</label>
         <input type="text" id="numeroPL" placeholder="Ingrese el número de PL" />
       </section>
 
       <section class="step">
-        <h2>Paso 3: Subir plantilla completada</h2>
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h2>Subir plantilla completada</h2>
+        </div>
         <p>Selecciona y sube la plantilla XLSX completada. El procesamiento se hará automáticamente.</p>
         <input id="fileInput" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
         <p id="processMsg" style="color:var(--muted);margin-top:8px">Sin archivo cargado.</p>
       </section>
 
       <section class="step">
-        <h2>Paso 4: Descargar planilla procesada</h2>
+        <div class="step-header">
+          <span class="step-number">4</span>
+          <h2>Descargar planilla procesada</h2>
+        </div>
         <p>Una vez procesado el archivo, descarga el listado final con los códigos de barras.</p>
         <button id="downloadResult" disabled>Descargar resultado (XLSX)</button>
       </section>
 
       <section class="step">
-        <h2>Paso 5: Subir archivo descargado en LES</h2>
+        <div class="step-header">
+          <span class="step-number">5</span>
+          <h2>Subir archivo descargado en LES</h2>
+        </div>
         <p>Subir el archivo descargado en LES/GENERALIMPORTADOR EXCEL/PL: Cargar Detalle de Cajas</p>
         <a href="https://les.tradeboxla.com/" target="_blank" class="link-button">Ir a LES</a>
       </section>
