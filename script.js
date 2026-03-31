@@ -33,6 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let processedRows = null; // rows for result
 
+  // Function to check PL and enable/disable file button
+  function checkPL(){
+    const plValue = numeroPL.value.trim();
+    const fileButton = document.querySelector('label[for="fileInput"]');
+    if(plValue){
+      fileButton.classList.remove('disabled');
+    } else {
+      fileButton.classList.add('disabled');
+    }
+  }
+
+  // Check PL on input
+  numeroPL.addEventListener('input', checkPL);
+
+  // Initial check
+  checkPL();
+
   btnXlsx.addEventListener('click', () => {
     const rows = [HEADERS];
     downloadXLSX('plantilla.xlsx', rows);
