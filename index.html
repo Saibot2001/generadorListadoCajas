@@ -3,28 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Descargar plantilla · importadorPL</title>
+    <title>Generador de Listado de Cajas · importadorPL</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="container">
-      <h1>Plantilla para importación</h1>
+      <h1>Generador de Listado de Cajas</h1>
       
-      <div class="controls">
-        <label for="numeroPL">Numero de PL:</label>
-        <input type="text" id="numeroPL" placeholder="Ingrese el numero de PL" />
+      <section class="step">
+        <h2>Paso 1: Descargar plantilla</h2>
+        <p>Descarga la plantilla XLSX para completar con los datos de las cajas.</p>
         <button id="downloadXlsx">Descargar plantilla (XLSX)</button>
-      </div>
+      </section>
 
-      
+      <section class="step">
+        <h2>Paso 2: Cargar número de PL</h2>
+        <p>Ingresa el número de Packing List (PL) que se usará para generar los códigos de barras.</p>
+        <label for="numeroPL">Número de PL:</label>
+        <input type="text" id="numeroPL" placeholder="Ingrese el número de PL" />
+      </section>
 
-      <section class="uploader">
-        <h2>Procesar plantilla completada</h2>
+      <section class="step">
+        <h2>Paso 3: Subir plantilla completada</h2>
+        <p>Selecciona y sube la plantilla XLSX completada. El procesamiento se hará automáticamente.</p>
         <input id="fileInput" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
-        <div class="controls" style="margin-top:12px">
-          <button id="downloadResult" disabled>Descargar resultado (XLSX)</button>
-        </div>
         <p id="processMsg" style="color:var(--muted);margin-top:8px">Sin archivo cargado.</p>
+      </section>
+
+      <section class="step">
+        <h2>Paso 4: Descargar planilla procesada</h2>
+        <p>Una vez procesado el archivo, descarga el listado final con los códigos de barras.</p>
+        <button id="downloadResult" disabled>Descargar resultado (XLSX)</button>
+      </section>
+
+      <section class="step">
+        <h2>Paso 5: Subir archivo descargado en LES</h2>
+        <p>Subir el archivo descargado en LES/GENERALIMPORTADOR EXCEL/PL: Cargar Detalle de Cajas</p>
       </section>
 
       <footer>

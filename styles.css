@@ -20,8 +20,9 @@ button:hover{background:var(--hover)}
 button:disabled{background:#d1d5db;color:#9ca3af;cursor:not-allowed}
 button.secondary{background:#e6eefc;color:var(--accent)}
 button.secondary:hover{background:#dbeafe}
-.uploader{margin-top:32px;padding:24px;border:1px solid var(--border);border-radius:8px;background:#fafbfc}
-.uploader h2{margin:0 0 16px;font-size:1.2rem;color:#111}
+.step{margin-bottom:32px;padding:20px;border:1px solid var(--border);border-radius:8px;background:#fafbfc}
+.step h2{margin:0 0 8px;font-size:1.2rem;color:#111}
+.step p{margin:0 0 16px;color:var(--muted)}
 .uploader input[type="file"]{margin-bottom:16px}
 .preview{margin-top:24px}
 table{width:100%;border-collapse:collapse;border-radius:8px;overflow:hidden}
