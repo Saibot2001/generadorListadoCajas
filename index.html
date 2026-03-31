@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Descargar plantilla · importadorPL</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Plantilla para importación</h1>
+      
+      <div class="controls">
+        <label for="numeroPL">Numero de PL:</label>
+        <input type="text" id="numeroPL" placeholder="Ingrese el numero de PL" />
+        <button id="downloadXlsx">Descargar plantilla (XLSX)</button>
+      </div>
+
+      
+
+      <section class="uploader">
+        <h2>Procesar plantilla completada</h2>
+        <input id="fileInput" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+        <div class="controls" style="margin-top:12px">
+          <button id="downloadResult" disabled>Descargar resultado (XLSX)</button>
+        </div>
+        <p id="processMsg" style="color:var(--muted);margin-top:8px">Sin archivo cargado.</p>
+      </section>
+
+      <footer>
+        <small>Archivo generado en el navegador. Formato CSV (separador: coma).</small>
+      </footer>
+    </main>
+
+  <!-- SheetJS (cliente) para generar archivos XLSX -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>

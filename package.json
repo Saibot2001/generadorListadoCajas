@@ -1,0 +1,11 @@
+{
+  "name": "importadorpl-web",
+  "version": "0.1.0",
+  "description": "Servidor estático para descargar plantilla CSV",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
