@@ -1,10 +1,10 @@
 :root{
-  --bg:#f6f7fb;
+  --bg:#fef7ed;
   --card:#ffffff;
-  --accent:#2563eb;
+  --accent:#f97316;
   --muted:#6b7280;
   --border:#e6e9ef;
-  --hover:#1d4ed8;
+  --hover:#ea580c;
 }
 *{box-sizing:border-box}
 body{font-family:Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;background:var(--bg);margin:0;color:#111}
