@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const plValue = numeroPL.value.trim();
     if(!plValue){
-      processMsg.textContent = 'Por favor, complete el campo "Número de PL" antes de subir el archivo.';
+      alert('No se puede cargar plantilla sin haber cargado el número de PL.');
       downloadResult.disabled = true;
       processedRows = null;
       // Reset the file input
