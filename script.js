@@ -47,6 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
       processedRows = null;
       return;
     }
+    const plValue = numeroPL.value.trim();
+    if(!plValue){
+      processMsg.textContent = 'Por favor, complete el campo "Número de PL" antes de subir el archivo.';
+      downloadResult.disabled = true;
+      processedRows = null;
+      // Reset the file input
+      fileInput.value = '';
+      return;
+    }
     processMsg.textContent = 'Procesando...';
     downloadResult.disabled = true;
     await processFile(f);
