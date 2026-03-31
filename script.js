@@ -14,12 +14,12 @@ function downloadFile(filename, content, mime='application/octet-stream'){
   URL.revokeObjectURL(url);
 }
 
-function downloadXLSX(filename, rows){
+function downloadXLSX(filename, rows, sheetName = 'Plantilla'){
   // rows: array of arrays
   // Build worksheet
   const ws = XLSX.utils.aoa_to_sheet(rows);
   const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Plantilla');
+  XLSX.utils.book_append_sheet(wb, ws, sheetName);
   const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
   downloadFile(filename, wbout, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 }
@@ -160,7 +160,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const plValue = numeroPL.value.trim();
     const headerRow = ["BARCODE", "N° de caja", "Codigo", "Descripcion", "Cantidad"];
     const outRows = [headerRow, ...processedRows.map(row => [plValue + "-" + row[0], ...row])];
-    downloadXLSX('listado-cajas.xlsx', outRows);
+
+    // Create workbook with hidden parameters sheet
+    const wb = XLSX.utils.book_new();
+
+    // Hidden parameters sheet
+    const wsParam = XLSX.utils.aoa_to_sheet([['IdReport'], ['87']]);
+    wsParam['!protect'] = {}; // Protect the sheet
+    XLSX.utils.book_append_sheet(wb, wsParam, 'Parametros');
+
+    // Hide the parameters sheet
+    if (!wb.Workbook) wb.Workbook = {};
+    if (!wb.Workbook.Sheets) wb.Workbook.Sheets = [];
+    wb.Workbook.Sheets.push({ name: 'Parametros', Hidden: 1 });
+
+    // Main sheet
+    const ws = XLSX.utils.aoa_to_sheet(outRows);
+    XLSX.utils.book_append_sheet(wb, ws, 'PL- Cargar Detalle de Cajas');
+
+    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    downloadFile('PL: Cargar Detalle de Cajas.xlsx', wbout, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
   });
 });
 
